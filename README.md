@@ -1,2 +1,6 @@
 # Prairie-Restoration-Experiment-BaylesRoad
-Data and analysis/plotting scripts from a manuscript reporting results of a multiple-year prairie restoration field experiment
+Multiple datasets measured during a multiple-year prairie restoration field experiment and accompanying analysis/plotting scripts.
+
+This includes the data and the analysis and plotting scripts used in House and Bever "*Biochar soil amendments in prairie restorations do not interfere with benefits from inoculation with native arbuscular mycorrhizal fungi*"
+
+
