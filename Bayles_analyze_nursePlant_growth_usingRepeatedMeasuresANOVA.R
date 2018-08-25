@@ -16,7 +16,7 @@
 # SAS - like contrasts (dropping last factor)
 options(contrasts=c(factor = "contr.SAS", ordered = "contr.poly"))
 
-nurseGrowth <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_NursePlantGrowthAllYears.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+nurseGrowth <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_NursePlantGrowthAllYears.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 nurseGrowth_2013 <- nurseGrowth[nurseGrowth$yearSampled == 2013,]
 
@@ -26,7 +26,6 @@ nurseGrowth_2015 <- nurseGrowth[nurseGrowth$yearSampled == 2015,]
 
 # Only And ger growth in 2016
 nurseGrowth_2016 <- nurseGrowth[nurseGrowth$yearSampled == 2016,]
-# andgerGrowth_2016 <- andgerGrowth[andgerGrowth$yearSampled == 2016,]
 
 nurseGrowth_2013_noNA <- nurseGrowth_2013[which(!is.na(nurseGrowth_2013$heightNormToPlantingHeight)),]
 nurseGrowth_2013_noNA_afterPlantingMeasures <- nurseGrowth_2013_noNA[nurseGrowth_2013_noNA$dateSampled != 41407,]
@@ -72,8 +71,6 @@ convertedDatesSince_Jan_1_2015 <- datesForConversion_2015 - Jan_1_2015_date
 convertedDatesSince_Jan_1_2015 <- as.numeric(convertedDatesSince_Jan_1_2015)
 
 dataToUse_allYears$numDaysSinceJan1 <- as.factor(c(convertedDatesSince_Jan_1_2013,convertedDatesSince_Jan_1_2014, convertedDatesSince_Jan_1_2015))
-
-dataToUse_allYears_through2016$numDaysSinceJan1 <- as.factor(c(convertedDatesSince_Jan_1_2013,convertedDatesSince_Jan_1_2014, convertedDatesSince_Jan_1_2015, convertedDatesSince_Jan_1_2016))
 
 
 # 2013 only

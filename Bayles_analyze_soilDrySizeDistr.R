@@ -28,7 +28,7 @@ library(ggplot2)
 # SAS - like contrasts (dropping last factor) - this only affects the contrast tested for the biochar.
 options(contrasts=c(factor = "contr.SAS", ordered = "contr.poly"))
 
-soilDistrData <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/BaylesBiochar_drySizeDist_2013_2014.csv", header = TRUE, sep = ",")
+soilDistrData <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/BaylesBiochar_drySizeDist_2013_2014.csv", header = TRUE, sep = ",")
 
 # These are the two size groups used
 mass_gt_1mm <- soilDistrData$mass_8mm + soilDistrData$mass_4mm + soilDistrData$mass_2mm

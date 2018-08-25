@@ -17,7 +17,7 @@ library(lmerTest)
 # SAS - like contrasts (dropping last factor)
 options(contrasts=c(factor = "contr.SAS", ordered = "contr.poly"))
 
-nurseGrowth <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_NursePlantGrowthAllYears.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+nurseGrowth <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_NursePlantGrowthAllYears.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 # Add a column for the block number for each plot based on the plot number. This is working correctly
 nurseGrowth$blockNum <- floor((nurseGrowth$plotNum - 1)/6) + 1

@@ -12,9 +12,9 @@ if(!(require("vegan"))){
 library("vegan")
 
 # This requires the OTU table and the metadata for the OTU table
-OTUTable <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_AbundOTU_97PercClustered_OTUTable_onlyAMFOTUs_onlyFieldSamples.tsv", header = T, sep = "\t")
+OTUTable <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_AbundOTU_97PercClustered_OTUTable_onlyAMFOTUs_onlyFieldSamples.tsv", header = T, sep = "\t")
 
-OTUTable_metadata <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_AbundOTU_97PercClustered_OTUTable_onlyAMFOTUs_onlyFieldSamples_metadata.tsv", header = T, sep = "\t")
+OTUTable_metadata <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_AbundOTU_97PercClustered_OTUTable_onlyAMFOTUs_onlyFieldSamples_metadata.tsv", header = T, sep = "\t")
 
 samplingYear_factor <- as.factor(OTUTable_metadata$Year)
 

@@ -22,12 +22,12 @@ library('DESeq2')
 #   each plot the sample was collected [middle vs. margin])
 #   3) Taxonomic attribution of each OTU
 
-OTUTable <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_AbundOTU_97PercClustered_OTUTable_onlyAMFOTUs_onlyFieldSamples.tsv", header = T, sep = "\t")
+OTUTable <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_AbundOTU_97PercClustered_OTUTable_onlyAMFOTUs_onlyFieldSamples.tsv", header = T, sep = "\t")
 
-OTUTable_metadata <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_AbundOTU_97PercClustered_OTUTable_onlyAMFOTUs_onlyFieldSamples_metadata.tsv", header = T, sep = "\t")
+OTUTable_metadata <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_AbundOTU_97PercClustered_OTUTable_onlyAMFOTUs_onlyFieldSamples_metadata.tsv", header = T, sep = "\t")
 
 # These are the OTU taxonomic attributions.
-AMF_OTU_attr <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_AMF_OTU_TaxonomicAttributions.csv", sep = ",", header = TRUE)
+AMF_OTU_attr <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_AMF_OTU_TaxonomicAttributions.csv", sep = ",", header = TRUE)
 
 samplingYear_factor <- as.factor(OTUTable_metadata$Year)
 

@@ -17,8 +17,8 @@ library(lmerTest)
 # SAS - like contrasts (dropping last factor) - this only affects the contrast tested for the biochar.
 options(contrasts=c(factor = "contr.SAS", ordered = "contr.poly"))
 
-WSAData_2013 <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/BaylesBiochar_2013_WSAMeasures.csv", header = TRUE, sep = ",")
-WSAData_2014 <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/BaylesBiochar_2014_WSAMeasures.csv", header = TRUE, sep = ",")
+WSAData_2013 <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/BaylesBiochar_2013_WSAMeasures.csv", header = TRUE, sep = ",")
+WSAData_2014 <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/BaylesBiochar_2014_WSAMeasures.csv", header = TRUE, sep = ",")
 
 WSA_combined <- rbind(WSAData_2013, WSAData_2014)
 
@@ -26,6 +26,10 @@ WSA_combined <- rbind(WSAData_2013, WSAData_2014)
 logit_WSA <- log10(WSA_combined$WSA/(1-WSA_combined$WSA))
 
 WSA_combined$logit_WSA <- logit_WSA
+
+WSA_forTest_2013 <- WSA_combined[WSA_combined$year == "2013",]
+
+WSA_forTest_2014 <- WSA_combined[WSA_combined$year == "2014",]
 
 #-----------------
 # Both years - nothing sign.

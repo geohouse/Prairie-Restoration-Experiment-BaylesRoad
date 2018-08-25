@@ -1,7 +1,7 @@
 # This is a plotter for the Bayles nurse plant root colonization (arbuscules)
 # This plot is Fig S1 in the manuscript.
 
-rootScores <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_nurseRootColonizationScores_forR.csv", header = TRUE, sep = ",")
+rootScores <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_nurseRootColonizationScores_forR.csv", header = TRUE, sep = ",")
 
 # order by functional group then by species name
 rootScores <- rootScores[order(rootScores$FunctionalGroup, rootScores$Species),]

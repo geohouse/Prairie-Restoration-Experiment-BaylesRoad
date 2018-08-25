@@ -10,14 +10,14 @@ if(!(require("vegan"))){
 
 library(vegan)
 
-Bayles_plantDiversity_2013 <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_aggregatedPlantDiversityData_2013.tsv", header = TRUE, sep = "\t")
+Bayles_plantDiversity_2013 <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_aggregatedPlantDiversityData_2013.tsv", header = TRUE, sep = "\t")
 
-Bayles_plantDiversity_2014 <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_aggregatedPlantDiversityData_2014.tsv", header = TRUE, sep = "\t")
+Bayles_plantDiversity_2014 <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_aggregatedPlantDiversityData_2014.tsv", header = TRUE, sep = "\t")
 
-Bayles_plantDiversity_2016 <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_aggregatedPlantDiversityData_2016.tsv", header = TRUE, sep = "\t")
+Bayles_plantDiversity_2016 <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_aggregatedPlantDiversityData_2016.tsv", header = TRUE, sep = "\t")
 
 # Now load the plot information (AMF/Biochar/Blocks)
-Bayles_plotTreatments <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_plotTreatments.csv", header = TRUE, sep = ",")
+Bayles_plotTreatments <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_plotTreatments.csv", header = TRUE, sep = ",")
 
 plotTreatments_2013 <- data.frame("Plot" = as.factor(rep(seq(1,36,1), each = 2)), "plotLoc" = as.factor(rep(c("C","R"),18)), "AMFTreatment" = as.factor(rep(Bayles_plotTreatments$AMF, each = 2)),
                                   "BiocharTreatment" = as.factor(rep(Bayles_plotTreatments$Biochar, each = 2)), "Block" = as.factor(rep(Bayles_plotTreatments$Block, each = 2)))

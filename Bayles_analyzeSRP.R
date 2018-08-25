@@ -27,7 +27,7 @@ library(ggplot2)
 # SAS - like contrasts (dropping last factor) - this only affects the contrast tested for the biochar.
 options(contrasts=c(factor = "contr.SAS", ordered = "contr.poly"))
 
-SRPData <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_SRP_Jan2014_forR.csv", header = TRUE, sep = ",")
+SRPData <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_SRP_Jan2014_forR.csv", header = TRUE, sep = ",")
 
 SRPData$AMFInoc <- as.factor(SRPData$AMFInoc)
 SRPData$biocharAmt <- as.factor(SRPData$biocharAmt)

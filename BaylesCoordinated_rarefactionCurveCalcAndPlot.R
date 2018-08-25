@@ -10,13 +10,13 @@ if(!(require("vegan"))){
 
 library(vegan)
 
-rawOTUTable_Bayles <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_AbundOTU_97PercClustered_OTUTable_allEntries.tsv",
+rawOTUTable_Bayles <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_AbundOTU_97PercClustered_OTUTable_allEntries.tsv",
                                  header = TRUE, sep = "\t")
 
 rawOTUFrame_Bayles <- data.frame(rawOTUTable_Bayles[, 7:length(rawOTUTable_Bayles[1,])])
 
 # These are IDd from the phylo
-AMFOTUNumbers_Bayles <- scan("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_ListOfAMFOTUs_fromPhylogeny.txt")
+AMFOTUNumbers_Bayles <- scan("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_ListOfAMFOTUs_fromPhylogeny.txt")
 
 # This works correctly to subset only the AMF OTU columns by moving them by name (eg X1,X12) 
 OTUframeBayles_onlyAMFOTUs <- rawOTUFrame_Bayles[,paste("X",AMFOTUNumbers_Bayles,sep="")]

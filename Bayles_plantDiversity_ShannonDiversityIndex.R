@@ -30,14 +30,14 @@ library(ggplot2)
 options(contrasts=c(factor = "contr.SAS", ordered = "contr.poly"))
 
 # Import the plant counts data
-Bayles_plantDiversity_2013 <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_aggregatedPlantDiversityData_2013.tsv", header = TRUE, sep = "\t")
+Bayles_plantDiversity_2013 <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_aggregatedPlantDiversityData_2013.tsv", header = TRUE, sep = "\t")
 
-Bayles_plantDiversity_2014 <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_aggregatedPlantDiversityData_2014.tsv", header = TRUE, sep = "\t")
+Bayles_plantDiversity_2014 <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_aggregatedPlantDiversityData_2014.tsv", header = TRUE, sep = "\t")
 
-Bayles_plantDiversity_2016 <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_aggregatedPlantDiversityData_2016.tsv", header = TRUE, sep = "\t")
+Bayles_plantDiversity_2016 <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_aggregatedPlantDiversityData_2016.tsv", header = TRUE, sep = "\t")
 
 # Now load the plot information (AMF/Biochar/Blocks)
-Bayles_plotTreatments <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_plotTreatments.csv", header = TRUE, sep = ",")
+Bayles_plotTreatments <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_plotTreatments.csv", header = TRUE, sep = ",")
 
 # Across all 3 years
 uniquePlantNames <- sort(unique(c(colnames(Bayles_plantDiversity_2013[-1]), colnames(Bayles_plantDiversity_2014[-1]), colnames(Bayles_plantDiversity_2016[-1]))))
@@ -112,6 +112,7 @@ fullPlantDiversity_2016 <- data.frame("Plot" = Bayles_plantDiversity_2016$plotNu
 # Overall diversity
 # -----------------
 # Plot location x AMF inoculation interaction
+print("@@@@@ All plant species")
 full_2013_2014_overall <- lmer(overallDiversity ~ AMFTreatment * BiocharTreatment * plotLoc + (1 | Year/Block/Plot), data = fullPlantDiversity_2013_2014)
 print(lmerTest::anova(full_2013_2014_overall, type = 3, ddf="Kenward-Roger"))
 
@@ -130,10 +131,8 @@ yesAMF_center <- data.frame(meanHPrime = mean(fullPlantDiversity_2013_2014$overa
                             seHPrime = sd(fullPlantDiversity_2013_2014$overallDiversity[fullPlantDiversity_2013_2014$AMFTreatment == "Y" & fullPlantDiversity_2013_2014$plotLoc == "C"], na.rm = TRUE)/sqrt(sum(!is.na(fullPlantDiversity_2013_2014$overallDiversity[fullPlantDiversity_2013_2014$AMFTreatment == "Y" & fullPlantDiversity_2013_2014$plotLoc == "C"]))))
 
 HPrime_YesAMF <- rbind(yesAMF_center, yesAMF_ring)
-rownames(srp_YesAMF) <- c("Middle" ,"Margin")
 
 HPrime_NoAMF <- rbind(noAMF_center, noAMF_ring)
-rownames(srp_NoAMF) <- c("Middle" ,"Margin")
 
 interactPlot <- ggplot() + 
     geom_line(aes(x = c(0.95,1.95), y = HPrime_NoAMF$meanHPrime), color = "#DE77AE", size = 2) + 
@@ -159,6 +158,7 @@ print(interactPlot)
 
 # Native plant diversity higher in middle compared to margins of plots regardless of AM fungal inoc.
 # --------------------
+print("@@@@@ Native plant species only")
 full_2013_2014_native <- lmer(nativeDiversityONLY ~ AMFTreatment * BiocharTreatment * plotLoc + (1 | Year/Block/Plot), data = fullPlantDiversity_2013_2014)
 print(lmerTest::anova(full_2013_2014_native, type = 3, ddf="Kenward-Roger"))
 # --------------------

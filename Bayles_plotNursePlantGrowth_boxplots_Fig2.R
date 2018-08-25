@@ -27,7 +27,7 @@ library(lubridate)
 library(ggplot2)
 library(tidyr)
 
-nurseGrowth <- read.table("~/Box Sync/R_code/Bayles_biochar/Bayles_forGitHub/Bayles_NursePlantGrowthAllYears.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+nurseGrowth <- read.table("~/Prairie-Restoration-Experiment-BaylesRoad-master/Bayles_NursePlantGrowthAllYears.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 serialMay1Date_2013 <- 41395
 serialMay1Date_2014 <- 41760
