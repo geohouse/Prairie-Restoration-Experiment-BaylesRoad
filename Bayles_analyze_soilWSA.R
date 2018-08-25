@@ -2,6 +2,15 @@
 # reported in Table S5. WSA data measured from blocks 2-6 for 2013 (first growing season)
 # and from blocks 1-3 for 2014 (second growing season).
 
+# Install required packages if necessary.
+if(!(require("lme4"))){
+    install.packages("lme4")
+} 
+
+if(!(require("lmerTest"))){
+    install.packages("lmerTest")
+} 
+
 library(lme4)
 library(lmerTest)
 

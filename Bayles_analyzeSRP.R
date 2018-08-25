@@ -2,6 +2,23 @@
 # measured at the end of the first growing season, and generates an interaction plot
 # (Fig. 5B in the manuscript)
 
+# Install required packages if necessary.
+if(!(require("lme4"))){
+    install.packages("lme4")
+} 
+
+if(!(require("lmerTest"))){
+    install.packages("lmerTest")
+} 
+
+if(!(require("dplyr"))){
+    install.packages("dplyr")
+} 
+
+if(!(require("ggplot2"))){
+    install.packages("ggplot2")
+} 
+
 library(lme4)
 library(lmerTest)
 library(dplyr)
